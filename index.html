@@ -37,9 +37,9 @@
   * on the page */
   #map {
     position: absolute;
-    top: 200px;
-    bottom: 0;
+    top: 0;
     width: 100%;
+    height: 91%;
   }
 
   /**
@@ -48,29 +48,31 @@
   * on the page. */
   .map-overlay {
     position: absolute;
-    bottom: 0;
+    bottom: 100px;
     right: 0;
     background: rgba(255, 255, 255, 0.8);
-    margin-right: 20px;
-    font-family: Arial, sans-serif;
+    margin-right: 40px;
+    font-family: tahoma;
     overflow: auto;
     border-radius: 3px;
   }
 
   #features {
-    top: 200px;
-    height: 100px;
+    top: 20px;
+    height: 120px;
     margin-top: 20px;
     width: 250px;
   }
 
   #legend {
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     line-height: 18px;
     height: 150px;
     margin-bottom: 40px;
-    width: 100px;
+    width: 80px;
+    font-family: tahoma;
+    font-size: 90%;
   }
 
   .legend-key {
@@ -88,19 +90,23 @@
 </head>
 
 <body>
-  <h1>Studio Week 3 <br> Choropleth Map with Mapbox </h1>
-  <!-- Add multiple pages to web page-->
-  <!-- active class displays the grey box around current page-->
-  <ul>
-  	<li><a class="active" href="index.html" target="_self">Output 1</a></li>
-    <li><a href="mapbox-interaction.html" target="_self">Output 2</a></li>
-    <li><a href="mapbox-turfjs.html" target="_self">Output 3</a></li>
-  </ul>
+  <div style="position: fixed; bottom: 0; text-align: left; padding-left: 15px;">
+    <h1>Studio Week 3: Choropleth Map with Mapbox </h1>
+  </div>
+  <div style="position: fixed; bottom: 0; right: 0px; padding-right: 30px; padding-bottom: 10px">
+    <!-- Add multiple pages to web page-->
+    <!-- active class displays the grey box around current page-->
+    <ul>
+  	   <li><a class="active" href="index.html" target="_self"> </a></li>
+       <li><a href="mapbox-interaction.html" target="_self"> </a></li>
+       <li><a href="mapbox-turfjs.html" target="_self"> </a></li>
+     </ul>
+  </div>
   <br>
 
   <!-- Add a div to give the map somewhere to go -->
   <div id='map'></div>
-  <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
+  <div class='map-overlay' id='features'><h2>US Population Density</h2><div id='pd'><p>Hover over a state!</p></div></div>
   <div class='map-overlay' id='legend'></div>
 
   <script>
@@ -110,13 +116,13 @@
     // Create a variable called "map" to house your map
     var map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/priscillaahn/ckglhqj97008319pd2ztek6dg' // replace this with your style URL
+      style: 'mapbox://styles/priscillaahn/ckgtswout08x119rwtfhtffiq' // replace this with your style URL
     });
 
     // Add a legend
     map.on('load', function() {
       var layers = ['0-10', '10-20', '20-50', '50-100', '100-200', '200-500', '500-1000', '1000+'];
-      var colors = ['#FFEDA0', '#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C', '#BD0026', '#800026'];
+      var colors = ['#DDDDDA', '#DDDED9', '#C2C8C5', '#AFBDBF', '#94B0B7', '#7697A0', '#4A707A', '#495456'];
 
       for (i = 0; i < layers.length; i++) {
         var layer = layers[i];
@@ -137,7 +143,7 @@
     // Add the information window
     map.on('mousemove', function(e) {
       var states = map.queryRenderedFeatures(e.point, {
-        layers: ['statedata']
+        layers: ['statedata-5pj620']
       });
 
       if (states.length > 0) {
