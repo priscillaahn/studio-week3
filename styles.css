@@ -1,14 +1,16 @@
 ul {
- list-style-type: none;
- margin: 1px;
- padding: 1px;
- overflow: hidden;
- background-color: white;
+  list-style-type: none;
+  padding: 1px;
+  overflow: hidden;
+  background-color: #DDDED9;
+  font-family: "lucida console";
+  font-size: 75%;
+  font-weight: bold;
 }
 
 li {
- float: left;
- border-right: 2px solid white;
+  float: left;
+  border-right: 2px solid white;
 }
 
 /* Add a border to all( but not the last) list items */
@@ -17,18 +19,69 @@ li:last-child {
 }
 
 li a {
- display: block;
- color: black;
- text-align: left;
- padding: 15px 17px;
- text-decoration: none;
+  display: block;
+  color: #495456;
+  text-align: left;
+  padding: 15px 17px;
+  text-decoration: none;
 }
 
 /* Links will change color when hovered over */
 li a:hover {
- background-color: #a09f9f;
+ background-color: #495456;
 }
 
 .active {
- background-color: #a09f9f;
+ background-color: #495456;
+}
+
+/* Font */
+h1 {
+  padding-left: 20px;
+  text-align: center;
+  color: #495456;
+  font-family: "lucida console";
+  font-size: 200%;
+}
+
+h2 {
+  text-align: center;
+  color: #495456;
+  font-family: tahoma;
+  font-size: 125%;
+}
+
+h3 {
+  text-align: center;
+  color: #495456;
+  font-family: tahoma;
+  font-size: 100%;
+}
+
+p {
+  text-align: center;
+  color: #495456;
+  font-family: tahoma;
+  font-size: 80%;
+}
+
+/* Center */
+.container {
+  height: 100px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Position at bottom */
+.top {
+  position: top;
+  bottom: 0;
 }
