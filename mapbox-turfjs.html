@@ -29,6 +29,7 @@
 </head>
 
 <body>
+  <hr style="position: fixed; top: 90.25%; width:100%; border-width: 2px;">
   <div style="position: fixed; bottom: 0; text-align: left; padding-left: 15px;">
   <h1>Studio Week 3: Analyze data with Turf.js and Mapbox GL JS </h1>
   </div>
@@ -95,6 +96,7 @@
       },
       layout: {
         'icon-image': 'hospital-15',
+        'icon-size': 1.25,
         'icon-allow-overlap': true
       },
       paint: { }
@@ -108,7 +110,8 @@
         data: libraries
       },
       layout: {
-        'icon-image': 'library-15'
+        'icon-image': 'library-15',
+        'icon-size': 1.5
       },
       paint: { }
     });
@@ -170,8 +173,8 @@
         type: 'circle',
         source: 'nearest-hospital',
         paint: {
-          'circle-radius': 12,
-          'circle-color': '#486DE0'
+          'circle-radius': 20,
+          'circle-color': '#AFBDBF'
         }
       }, 'hospitals');
     }
